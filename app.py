@@ -1,7 +1,7 @@
 import io
 import codecs
 
-from flask import Flask, send_file
+from flask import Flask, send_file, render_template
 from random import seed
 from random import randint
 
@@ -10,6 +10,10 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return "Test application Flashcards!!!"
+
+@app.route("/test")
+def test():
+    return render_template('test.html')
 
 @app.route("/GetRiim/<int:entityId>")
 def get_riim(entityId):
