@@ -34,5 +34,5 @@ jobs:
       with:
         app-name: ne-dev-test-flshcrds
         slot-name: Production
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B019767414FB46199016EEF9E501A28E }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9E3BBBE952D3421E9F600D5C0EF26910 }}
 
