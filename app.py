@@ -1,6 +1,5 @@
 import io
 import codecs
-import matplotlib.image as mpimg
 
 from flask import Flask
 app = Flask(__name__)
