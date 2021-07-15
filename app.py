@@ -1,3 +1,7 @@
+import io
+import codecs
+import matplotlib.image as mpimg
+
 from flask import Flask
 app = Flask(__name__)
 
@@ -7,4 +11,12 @@ def hello():
 
 @app.route("/GetRiim/<int:entityId>")
 def get_riim(entityId):
-    return "Entity Value:" + str(entityId)
+    inputfile = "./resources/1.png"
+    f=codecs.open(inputfile, 'r')
+    image = f.read()
+    response = Flask.make_response(image)
+    response.headers.set('Content-Type', 'image/png')
+    #response.headers.set('Content-Disposition', 'attachment', filename='%s.jpg' % pid)
+    response.headers.set('Content-Disposition', 'attachment', filename=inputfile)
+    #return "Entity Value:" + str(entityId)
+    return response
